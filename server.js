@@ -228,6 +228,16 @@ app.get("/api/leads", async (req, res) => {
   res.json({ total: rows.length, qualified, intent_yes: intentYes, funnel, leads: rows });
 });
 
+/* ---- admin: delete a lead (token-protected) — prune test/spam signups ---- */
+app.delete("/api/leads/:id", async (req, res) => {
+  if (!ADMIN_TOKEN || req.query.token !== ADMIN_TOKEN)
+    return res.status(401).json({ error: "unauthorized" });
+  const id = parseInt(req.params.id, 10);
+  if (!Number.isInteger(id)) return res.status(400).json({ error: "bad_id" });
+  const r = await pool.query("DELETE FROM waitlist WHERE id = $1", [id]);
+  res.json({ deleted: r.rowCount });
+});
+
 /* ---- health ---- */
 app.get("/api/health", (_req, res) => res.json({ ok: true }));
 
