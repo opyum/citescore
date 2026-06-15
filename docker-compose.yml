@@ -1,0 +1,35 @@
+# All-in-one stack for Dokploy: landing + capture API + Postgres.
+# In Dokploy you can deploy this as a "Compose" service, or deploy the app
+# alone and use a Dokploy-managed Postgres (just set DATABASE_URL).
+services:
+  app:
+    build: .
+    restart: unless-stopped
+    environment:
+      DATABASE_URL: postgres://citescore:${DB_PASSWORD}@db:5432/citescore
+      ADMIN_TOKEN: ${ADMIN_TOKEN}
+      PORT: 3000
+      PGSSL: "false"
+    ports:
+      - "3000:3000"     # Dokploy/Traefik maps your domain to this
+    depends_on:
+      db:
+        condition: service_healthy
+
+  db:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: citescore
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: citescore
+    volumes:
+      - citescore_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U citescore"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  citescore_pgdata:

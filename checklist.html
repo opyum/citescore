@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The 12 Signals That Decide Whether AI Cites Your Site — CiteScore</title>
+  <meta name="description" content="A free 1-page checklist: the 12 signals that decide whether ChatGPT, Perplexity and Google AI cite your site. Most sites fail 7." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .doc{max-width:820px;margin:0 auto;padding:3.5rem 1.6rem 6rem}
+    .doc h1{font-size:clamp(2.4rem,6vw,4rem);margin:.6rem 0 .4rem}
+    .doc .sub{font-family:var(--mono);font-size:.8rem;color:var(--signal-d);text-transform:uppercase;letter-spacing:.06em}
+    .doc .intro{color:var(--text-dim);font-size:1.1rem;margin:1.4rem 0 2.4rem;max-width:60ch}
+    .grp{margin:2.4rem 0 1rem;font-family:var(--mono);font-size:.78rem;color:var(--signal);text-transform:uppercase;letter-spacing:.1em;border-bottom:1px solid var(--line);padding-bottom:.6rem}
+    .sig-item{display:flex;gap:1rem;padding:1.1rem 0;border-bottom:1px dashed var(--line)}
+    .sig-item .n{font-family:var(--serif);font-size:1.8rem;color:var(--signal);min-width:2.2rem;line-height:1}
+    .sig-item h3{font-size:1.12rem;font-weight:700;margin-bottom:.25rem}
+    .sig-item p{color:var(--text-dim);font-size:.96rem}
+    .score-box{background:var(--ink-2);border:1px solid var(--line);border-radius:6px;padding:1.4rem 1.6rem;margin:2.6rem 0;font-size:1rem}
+    .score-box b{color:var(--signal)}
+    .cta-box{text-align:center;border:1px solid var(--line-soft);border-radius:8px;padding:2.4rem;background:linear-gradient(180deg,#0e110d,#0a0b0a)}
+    .cta-box h2{font-family:var(--serif);font-size:1.8rem;font-weight:400;margin-bottom:.7rem}
+    .cta-box p{color:var(--text-dim);max-width:48ch;margin:0 auto 1.4rem}
+  </style>
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="scanlines" aria-hidden="true"></div>
+
+  <header class="nav">
+    <a href="/" class="brand"><span class="brand-mark">◧</span> CiteScore</a>
+    <a href="/#join" class="btn btn-ghost">Get my free audit</a>
+  </header>
+
+  <main class="doc">
+    <p class="sub">// Free checklist</p>
+    <h1>The 12 signals that decide whether AI cites your site</h1>
+    <p class="intro">When someone asks ChatGPT, Perplexity, or Google's AI Overview “what's a good tool for X,” the AI picks from sites it can <strong>read</strong>, <strong>trust</strong>, and <strong>quote</strong>. This is GEO/AEO — the SEO of AI search. Run your site against these 12. Most sites fail 7.</p>
+
+    <div class="grp">Access &amp; crawlability</div>
+    <div class="sig-item"><span class="n">1</span><div><h3>AI bots allowed in robots.txt</h3><p>If <code>GPTBot</code>, <code>ClaudeBot</code>, <code>PerplexityBot</code> or <code>Google-Extended</code> are blocked, you're invisible to those engines no matter how good your content is.</p></div></div>
+    <div class="sig-item"><span class="n">2</span><div><h3>You have an <code>llms.txt</code> file</h3><p>A simple <code>/llms.txt</code> tells AI models what your site is and how to summarize you. Almost nobody has one — free differentiation right now.</p></div></div>
+    <div class="sig-item"><span class="n">3</span><div><h3>Pages render without JavaScript</h3><p>Many AI crawlers don't run JS well. If key content only appears after a client-side render, the model sees an empty page.</p></div></div>
+
+    <div class="grp">Structure &amp; machine-readability</div>
+    <div class="sig-item"><span class="n">4</span><div><h3>Schema.org structured data</h3><p><code>Organization</code>, <code>Product</code>, <code>FAQPage</code>, <code>Article</code> markup tells the AI exactly what you are — in a format it trusts over prose.</p></div></div>
+    <div class="sig-item"><span class="n">5</span><div><h3>Answer-first content structure</h3><p>Lead with the direct answer in the first 1–2 sentences. AI extracts the top of a section; bury the answer and it can't quote you.</p></div></div>
+    <div class="sig-item"><span class="n">6</span><div><h3>Clear, descriptive headings</h3><p>AI uses your heading hierarchy to understand and chunk the page. Vague headings (“Welcome!”) give it nothing to grab.</p></div></div>
+    <div class="sig-item"><span class="n">7</span><div><h3>FAQ coverage of real buyer questions</h3><p>Pages answering “how much does X cost,” “is X better than Y,” “does X do Z” get cited — that's literally what users ask the AI.</p></div></div>
+
+    <div class="grp">Trust &amp; authority</div>
+    <div class="sig-item"><span class="n">8</span><div><h3>Explicit comparison / “vs” content</h3><p>If you don't state how you compare to alternatives, the AI fills the gap with competitors. Own the comparison.</p></div></div>
+    <div class="sig-item"><span class="n">9</span><div><h3>Named author, dates, entity consistency</h3><p>Consistent name/brand across site, social and the web builds the “entity” the AI recognizes and trusts.</p></div></div>
+    <div class="sig-item"><span class="n">10</span><div><h3>External mentions &amp; citations</h3><p>Being referenced on other credible sites (directories, roundups, forums) is a major trust signal. AI weights what others say about you.</p></div></div>
+
+    <div class="grp">Freshness &amp; coverage</div>
+    <div class="sig-item"><span class="n">11</span><div><h3>Visible freshness signals</h3><p>Recent “last updated” dates and current info. Stale pages get deprioritized; AI prefers sources that look maintained.</p></div></div>
+    <div class="sig-item"><span class="n">12</span><div><h3>Topical depth, not just a landing page</h3><p>One marketing page isn't enough. A handful of genuinely useful pages gives the AI surface area to cite.</p></div></div>
+
+    <div class="score-box">
+      <b>Score yourself:</b> 10–12 = ahead of ~95% of sites · 7–9 = solid, fixable gaps · below 7 = AI is probably recommending your competitors right now, and you'd never know.
+    </div>
+
+    <div class="cta-box">
+      <h2>Want this done <em style="color:var(--signal)">for</em> you?</h2>
+      <p>The first 50 founding sites get a free hand audit: your A→F grade, your 3 priority fixes, and a head-to-head benchmark vs. the competitor stealing your citations.</p>
+      <a href="/#join" class="btn btn-primary btn-lg">Claim my founding spot →</a>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <span class="brand"><span class="brand-mark">◧</span> CiteScore</span>
+    <span class="mono dim">aicitescore.com · AI Search Readiness</span>
+    <span class="mono dim">© 2026</span>
+  </footer>
+</body>
+</html>

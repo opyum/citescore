@@ -1,0 +1,16 @@
+{
+  "name": "citescore-landing",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "CiteScore — AI Search Readiness landing + waitlist capture (VPS/Dokploy)",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "engines": { "node": ">=20" },
+  "dependencies": {
+    "express": "^4.21.2",
+    "pg": "^8.13.1"
+  }
+}
