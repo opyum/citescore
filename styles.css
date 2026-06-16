@@ -74,6 +74,10 @@ h1 em{font-style:italic;color:var(--signal)}
 .nav-right{display:flex;align-items:center;gap:1.4rem}
 .nav-status{font-family:var(--mono);font-size:.72rem;color:var(--text-dim);display:inline-flex;align-items:center;gap:.45rem}
 .nav-status .dot{width:7px;height:7px;border-radius:50%;background:var(--signal);box-shadow:0 0 8px var(--signal);animation:pulse 2s infinite}
+.lang-switch{display:inline-flex;border:1px solid var(--line);border-radius:3px;overflow:hidden}
+.lang-switch button{font-family:var(--mono);font-size:.72rem;font-weight:500;background:transparent;color:var(--text-dim);border:none;padding:.4rem .6rem;cursor:pointer;transition:.15s}
+.lang-switch button:hover{color:var(--text)}
+.lang-switch button.active{background:var(--signal);color:#0a0b0a;font-weight:700}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
 
 /* ---- buttons ---- */

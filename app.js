@@ -8,6 +8,7 @@ const $ = (s, r = document) => r.querySelector(s);
 function cleanUrl(v) {
   return (v || "").trim().replace(/^https?:\/\//i, "").replace(/\/+$/, "");
 }
+const T = (k) => (window.I18N ? window.I18N.t(k) : "");
 function track(name) {
   try {
     const body = JSON.stringify({ name, path: location.pathname, ref: document.referrer });
@@ -42,7 +43,7 @@ joinForm.addEventListener("submit", async (e) => {
   const url = cleanUrl($("#j-url").value);
   const email = $("#j-email").value.trim();
   if (!url || !email || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) {
-    submitBtn.textContent = "Check your URL + email →";
+    submitBtn.textContent = T("rt_badinput") || "Check your URL + email →";
     return;
   }
   const lead = {
@@ -58,7 +59,7 @@ joinForm.addEventListener("submit", async (e) => {
   };
 
   submitBtn.disabled = true;
-  submitBtn.textContent = "Saving…";
+  submitBtn.textContent = T("rt_saving") || "Saving…";
 
   let ok = true;
   try {
@@ -83,7 +84,7 @@ joinForm.addEventListener("submit", async (e) => {
     runQuickcheck(url);
   } else {
     submitBtn.disabled = false;
-    submitBtn.textContent = "Something broke — try again →";
+    submitBtn.textContent = T("rt_error") || "Something broke — try again →";
   }
 });
 
@@ -91,7 +92,7 @@ joinForm.addEventListener("submit", async (e) => {
 async function runQuickcheck(url) {
   const box = $("#teaser"), list = $("#teaser-list");
   if (!box || !list) return;
-  list.innerHTML = '<li class="t-wait">checking llms.txt, AI-bot access, structured data…</li>';
+  list.innerHTML = '<li class="t-wait">' + (T("rt_checking") || "checking your public signals…") + "</li>";
   box.hidden = false;
   try {
     const res = await fetch("/api/quickcheck", {
@@ -107,9 +108,9 @@ async function runQuickcheck(url) {
       return `<li class="${cls}"><span>${label}</span><b>${sym}</b></li>`;
     };
     list.innerHTML =
-      row("llms.txt present", d.llms ? "ok" : "bad") +
-      row("AI crawlers allowed (robots.txt)", d.ai_access === "ok" ? "ok" : d.ai_access === "blocked" ? "bad" : "warn") +
-      row("Structured data (schema.org)", d.schema ? "ok" : "bad");
+      row(T("rt_llms") || "llms.txt present", d.llms ? "ok" : "bad") +
+      row(T("rt_ai") || "AI crawlers allowed (robots.txt)", d.ai_access === "ok" ? "ok" : d.ai_access === "blocked" ? "bad" : "warn") +
+      row(T("rt_schema") || "Structured data (schema.org)", d.schema ? "ok" : "bad");
   } catch (_) {
     box.hidden = true;
   }

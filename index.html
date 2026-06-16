@@ -3,18 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CiteScore — Is your site cited by AI? Get your free AI Search Readiness score.</title>
-  <meta name="description" content="ChatGPT, Perplexity and Google AI recommend products like yours. Scan your site, get your AI Search Readiness score (A→F), and see exactly what to fix. Free." />
+  <title>CiteScore — Is your site cited by AI? Free AI Search Readiness score</title>
+  <meta name="description" content="ChatGPT, Perplexity and Google AI recommend businesses like yours every day — by citing someone. Get your AI Search Readiness score (A→F) and the fixes. Free." />
 
-  <!-- Open Graph / social share -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Is your site cited by AI?" />
-  <meta property="og:description" content="ChatGPT recommends your competitors. Not you. Get your free AI Search Readiness score (A→F)." />
+  <meta property="og:description" content="AI recommends businesses like yours every day — by citing someone. Get your AI Search Readiness score (A→F), free." />
   <meta property="og:url" content="https://aicitescore.com" />
   <meta property="og:site_name" content="CiteScore" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Is your site cited by AI?" />
-  <meta name="twitter:description" content="ChatGPT recommends your competitors. Not you. Get your free AI Search Readiness score (A→F)." />
+  <meta name="twitter:description" content="AI recommends businesses like yours every day — by citing someone. Get your AI Search Readiness score (A→F)." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -22,18 +21,18 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <!-- texture overlays -->
   <div class="grain" aria-hidden="true"></div>
   <div class="scanlines" aria-hidden="true"></div>
 
   <!-- ░░ NAV ░░ -->
   <header class="nav">
-    <a href="#" class="brand">
-      <span class="brand-mark">◧</span> CiteScore
-    </a>
+    <a href="#" class="brand"><span class="brand-mark">◧</span> CiteScore</a>
     <div class="nav-right">
-      <span class="nav-status"><span class="dot"></span> founding access open</span>
-      <a href="#join" class="btn btn-ghost">Get my free audit</a>
+      <span class="nav-status"><span class="dot"></span> <span data-i18n="nav_status">founding access open</span></span>
+      <div class="lang-switch" role="group" aria-label="Language">
+        <button type="button" data-setlang="fr">FR</button><button type="button" data-setlang="en">EN</button>
+      </div>
+      <a href="#join" class="btn btn-ghost" data-i18n="nav_cta">Get my free audit</a>
     </div>
   </header>
 
@@ -41,55 +40,44 @@
     <!-- ░░ HERO ░░ -->
     <section class="hero">
       <div class="hero-inner">
-        <p class="eyebrow reveal" style="--d:0">// AI SEARCH READINESS · GEO/AEO AUDIT</p>
-        <h1 class="reveal" style="--d:1">
-          Is your site<br /><em>cited</em> by AI?
-        </h1>
-        <p class="lede reveal" style="--d:2">
-          ChatGPT, Perplexity and Google AI Overviews recommend products like yours
-          every day — by citing <span class="u">someone</span>. If it isn't you,
-          you're invisible. Get your <strong>AI Search Readiness score</strong> —
-          and the exact fixes to climb.
-        </p>
+        <p class="eyebrow reveal" style="--d:0" data-i18n="hero_eyebrow">// AI SEARCH READINESS · GEO/AEO AUDIT</p>
+        <h1 class="reveal" style="--d:1" data-i18n="hero_h1">Is your site<br /><em>cited</em> by AI?</h1>
+        <p class="lede reveal" style="--d:2" data-i18n="hero_lede">ChatGPT, Perplexity and Google AI Overviews recommend businesses like yours every day — by citing <span class="u">someone</span>. If it isn't you, you're invisible. Get your <strong>AI Search Readiness score</strong> — and the exact fixes to climb.</p>
 
         <form id="hero-form" class="hero-form reveal" style="--d:3" novalidate>
           <div class="field">
             <span class="field-pre">https://</span>
-            <input id="hero-url" type="text" inputmode="url" autocomplete="url"
-                   placeholder="your-site.com" aria-label="Your website URL" />
+            <input id="hero-url" type="text" inputmode="url" autocomplete="url" placeholder="your-site.com" data-i18n-ph="hero_url_ph" aria-label="URL" />
           </div>
-          <button type="submit" class="btn btn-primary">Get my free audit →</button>
+          <button type="submit" class="btn btn-primary" data-i18n="hero_btn">Get my free audit →</button>
         </form>
-        <p class="hero-note reveal" style="--d:4">
-          No credit card. Hand-checked by a real founder — full report in ~48h. <span class="spots">First 50 sites only.</span>
-        </p>
+        <p class="hero-note reveal" style="--d:4" data-i18n="hero_note">No credit card. Hand-checked by a real human — full report in ~48h. <span class="spots">First 50 sites only.</span></p>
       </div>
 
-      <!-- scanner readout card -->
       <aside class="scanner reveal" style="--d:3" aria-hidden="true">
         <div class="scanner-top">
-          <span class="mono dim">// SAMPLE REPORT · acme.com</span>
-          <span class="mono blink">▮ this is what you get</span>
+          <span class="mono dim" data-i18n="sc_top_left">// SAMPLE REPORT · acme.com</span>
+          <span class="mono blink" data-i18n="sc_top_right">▮ this is what you get</span>
         </div>
         <div class="grade-wrap">
           <div class="grade" id="grade">C</div>
           <div class="grade-meta">
-            <span class="mono dim">AI READINESS</span>
+            <span class="mono dim" data-i18n="sc_readiness">AI READINESS</span>
             <div class="bar"><i id="bar"></i></div>
-            <span class="mono" id="pct">61 / 100</span>
+            <span class="mono" id="pct">58 / 100</span>
           </div>
         </div>
         <ul class="checks">
-          <li class="ok"><span>llms.txt present</span><b>✓</b></li>
-          <li class="bad"><span>GPTBot allowed in robots.txt</span><b>✕</b></li>
-          <li class="ok"><span>Structured data (schema.org)</span><b>✓</b></li>
-          <li class="warn"><span>Answer-first content blocks</span><b>~</b></li>
-          <li class="bad"><span>3 competitors rank above you</span><b>🔒</b></li>
+          <li class="ok"><span data-i18n="sc_1">llms.txt present</span><b>✓</b></li>
+          <li class="bad"><span data-i18n="sc_2">AI crawlers allowed (robots.txt)</span><b>✕</b></li>
+          <li class="ok"><span data-i18n="sc_3">Structured data (schema.org)</span><b>✓</b></li>
+          <li class="warn"><span data-i18n="sc_4">Answer-first content blocks</span><b>~</b></li>
+          <li class="bad"><span data-i18n="sc_5">3 competitors rank above you</span><b>🔒</b></li>
         </ul>
       </aside>
     </section>
 
-    <!-- ░░ MARQUEE / ENGINES ░░ -->
+    <!-- ░░ MARQUEE ░░ -->
     <div class="marquee" aria-hidden="true">
       <div class="marquee-track">
         <span>CHATGPT</span><span>•</span><span>PERPLEXITY</span><span>•</span><span>GOOGLE AI OVERVIEWS</span><span>•</span><span>GEMINI</span><span>•</span><span>CLAUDE</span><span>•</span><span>COPILOT</span><span>•</span>
@@ -99,187 +87,161 @@
 
     <!-- ░░ PROBLEM ░░ -->
     <section class="band problem">
-      <p class="section-tag">// THE SHIFT</p>
-      <h2 class="big">
-        Search stopped sending clicks.<br />
-        <span class="muted">Now the AI answers — and names a winner.</span>
-      </h2>
+      <p class="section-tag" data-i18n="prob_tag">// THE SHIFT</p>
+      <h2 class="big" data-i18n="prob_h2">Search stopped sending clicks.<br /><span class="muted">Now the AI answers — and names a winner.</span></h2>
       <div class="stat-row">
-        <div class="stat">
-          <span class="num">60%+</span>
-          <span class="lbl">of searches now end <em>without a click</em></span>
-        </div>
-        <div class="stat">
-          <span class="num">1</span>
-          <span class="lbl">brand usually gets <em>cited</em> in the answer</span>
-        </div>
-        <div class="stat">
-          <span class="num">0</span>
-          <span class="lbl">tools tell a founder if that brand is <em>them</em></span>
-        </div>
+        <div class="stat"><span class="num" data-i18n="prob_s1n">60%+</span><span class="lbl" data-i18n="prob_s1l">of searches now end <em>without a click</em></span></div>
+        <div class="stat"><span class="num" data-i18n="prob_s2n">1</span><span class="lbl" data-i18n="prob_s2l">business usually gets <em>cited</em> in the answer</span></div>
+        <div class="stat"><span class="num" data-i18n="prob_s3n">0</span><span class="lbl" data-i18n="prob_s3l">tools tell you if that business is <em>you</em></span></div>
       </div>
-      <p class="problem-line">
-        When someone asks ChatGPT for “a tool like yours,” it confidently recommends
-        three of your competitors — and you have no idea why, or that it even happened.
-      </p>
+      <p class="problem-line" data-i18n="prob_line">When someone asks ChatGPT for “a business like yours,” it confidently recommends three of your competitors — and you have no idea why, or that it even happened.</p>
     </section>
 
     <!-- ░░ WHAT YOU GET ░░ -->
     <section class="band">
-      <p class="section-tag">// YOUR REPORT</p>
-      <h2 class="big">What lands in your inbox</h2>
+      <p class="section-tag" data-i18n="get_tag">// YOUR REPORT</p>
+      <h2 class="big" data-i18n="get_h2">What lands in your inbox</h2>
       <div class="cards">
-        <article class="card">
-          <span class="card-no">01</span>
-          <h3>A grade, A&nbsp;→&nbsp;F</h3>
-          <p>One honest number for how citable your site is to AI engines. Screenshot-ready.</p>
-        </article>
-        <article class="card">
-          <span class="card-no">02</span>
-          <h3>The fixes, ready to paste</h3>
-          <p>Not 50 todos — the few changes that matter, with the files done for you: your <code>llms.txt</code>, the exact <code>robots.txt</code> lines, your schema markup.</p>
-        </article>
-        <article class="card">
-          <span class="card-no">03</span>
-          <h3>A competitor side-by-side</h3>
-          <p>See where a rival beats you on AI readiness — and exactly on which signals.</p>
-        </article>
+        <article class="card"><span class="card-no">01</span><h3 data-i18n="get_c1h">A grade, A → F</h3><p data-i18n="get_c1p">One honest number for how citable you are to AI engines. Screenshot-ready.</p></article>
+        <article class="card"><span class="card-no">02</span><h3 data-i18n="get_c2h">The fixes, ready to paste</h3><p data-i18n="get_c2p">Not 50 todos — the few changes that matter, with the files done for you: your <code>llms.txt</code>, the exact <code>robots.txt</code> lines, your schema markup.</p></article>
+        <article class="card"><span class="card-no">03</span><h3 data-i18n="get_c3h">A competitor side-by-side</h3><p data-i18n="get_c3p">See where a rival beats you on AI readiness — and exactly on which signals.</p></article>
       </div>
     </section>
 
     <!-- ░░ HOW IT WORKS ░░ -->
     <section class="band steps-band">
-      <p class="section-tag">// HOW IT WORKS</p>
-      <h2 class="big">Thirty seconds of effort</h2>
+      <p class="section-tag" data-i18n="how_tag">// HOW IT WORKS</p>
+      <h2 class="big" data-i18n="how_h2">Thirty seconds of effort</h2>
       <ol class="steps">
-        <li><span class="step-n mono">1</span><div><h3>Drop your URL</h3><p>That's the whole ask. No signup wall before the value.</p></div></li>
-        <li><span class="step-n mono">2</span><div><h3>We audit 12 citability signals</h3><p>llms.txt, AI-bot crawl rules, schema, answer-first structure, freshness & more.</p></div></li>
-        <li><span class="step-n mono">3</span><div><h3>Get your score + action plan</h3><p>Your grade, the fixes that matter, and a rival benchmark.</p></div></li>
+        <li><span class="step-n mono">1</span><div><h3 data-i18n="how_1h">Drop your URL</h3><p data-i18n="how_1p">That's the whole ask. No signup wall before the value.</p></div></li>
+        <li><span class="step-n mono">2</span><div><h3 data-i18n="how_2h">We audit 12 citability signals</h3><p data-i18n="how_2p">Structured data, AI-bot access, answer-first structure, FAQ coverage, freshness & more.</p></div></li>
+        <li><span class="step-n mono">3</span><div><h3 data-i18n="how_3h">Get your score + action plan</h3><p data-i18n="how_3p">Your grade, the fixes that matter, and a competitor benchmark.</p></div></li>
       </ol>
     </section>
 
     <!-- ░░ 12 SIGNALS ░░ -->
     <section class="band signals-band">
-      <p class="section-tag">// THE 12 SIGNALS</p>
-      <h2 class="big">What we actually check</h2>
-      <p class="sub">Most sites quietly fail 7 of these. Here are a few:</p>
+      <p class="section-tag" data-i18n="sig_tag">// THE 12 SIGNALS</p>
+      <h2 class="big" data-i18n="sig_h2">What we actually check</h2>
+      <p class="sub" data-i18n="sig_sub">Most sites quietly fail 7 of these. Here are a few:</p>
       <div class="signals">
-        <span class="sig">llms.txt presence &amp; quality</span>
-        <span class="sig">GPTBot / ClaudeBot / PerplexityBot access</span>
-        <span class="sig">Schema.org structured data</span>
-        <span class="sig">Answer-first content blocks</span>
-        <span class="sig">FAQ &amp; Q-format coverage</span>
-        <span class="sig">Heading & semantic structure</span>
-        <span class="sig">Crawlability &amp; render</span>
-        <span class="sig">Content freshness signals</span>
-        <span class="sig locked">+ 4 more <b>🔒</b></span>
+        <span class="sig" data-i18n="sig_1">Schema.org structured data</span>
+        <span class="sig" data-i18n="sig_2">FAQ coverage (real buyer questions)</span>
+        <span class="sig" data-i18n="sig_3">E-E-A-T signals (authors, dates)</span>
+        <span class="sig" data-i18n="sig_4">Answer-first content blocks</span>
+        <span class="sig" data-i18n="sig_5">Heading & semantic structure</span>
+        <span class="sig" data-i18n="sig_6">AI crawler access (robots.txt)</span>
+        <span class="sig" data-i18n="sig_7">Entity & name consistency</span>
+        <span class="sig" data-i18n="sig_8">Content freshness</span>
+        <span class="sig locked" data-i18n="sig_locked">+ 4 more 🔒</span>
       </div>
     </section>
 
     <!-- ░░ FOUNDER OFFER ░░ -->
     <section class="band offer-band">
-      <p class="section-tag">// FOUNDING ACCESS</p>
-      <h2 class="big">First 50 sites only</h2>
+      <p class="section-tag" data-i18n="off_tag">// FOUNDING ACCESS</p>
+      <h2 class="big" data-i18n="off_h2">First 50 sites only</h2>
       <ul class="offer-list">
-        <li><b>Free scan, for life</b> — one domain monitored, free, forever.</li>
-        <li><b>Full report first</b> — the detailed audit, before public launch.</li>
-        <li><b>“Founding Member” badge</b> — for your site &amp; README.</li>
-        <li><b>Direct line to the maker</b> — shape what gets built.</li>
+        <li data-i18n="off_1"><b>Free scan, for life</b> — one site monitored, free, forever.</li>
+        <li data-i18n="off_2"><b>Full report first</b> — the detailed audit, before public launch.</li>
+        <li data-i18n="off_3"><b>“Founding Member” badge</b> — for your site.</li>
+        <li data-i18n="off_4"><b>Direct line to the maker</b> — shape what gets built.</li>
       </ul>
-      <p class="offer-note mono">// Built in public by a solo founder. I hand-audit every founding site personally — and help you ship the fixes. That's why it's capped at 50.</p>
+      <p class="offer-note mono" data-i18n="off_note">// Built in public by a solo founder. I hand-audit every founding site personally — and help you ship the fixes. That's why it's capped at 50.</p>
     </section>
 
     <!-- ░░ CAPTURE ░░ -->
     <section class="band join-band" id="join">
       <div class="join-card">
-        <p class="section-tag">// CLAIM YOUR SCORE</p>
-        <h2 class="big">Get your AI Search Readiness score</h2>
-        <p class="sub">Your audit, before everyone else. We'll email it to you.</p>
+        <p class="section-tag" data-i18n="join_tag">// CLAIM YOUR SCORE</p>
+        <h2 class="big" data-i18n="join_h2">Get your AI Search Readiness score</h2>
+        <p class="sub" data-i18n="join_sub">Your audit, before everyone else. We'll email it to you.</p>
 
         <form id="join-form" class="join-form" novalidate>
           <div class="row">
-            <label>Website
+            <label><span data-i18n="join_l_site">Website</span>
               <div class="field">
                 <span class="field-pre">https://</span>
-                <input id="j-url" name="url" type="text" inputmode="url" placeholder="your-site.com" required />
+                <input id="j-url" name="url" type="text" inputmode="url" placeholder="your-site.com" data-i18n-ph="join_url_ph" required />
               </div>
             </label>
-            <label>Email
+            <label><span data-i18n="join_l_email">Email</span>
               <div class="field">
-                <input id="j-email" name="email" type="email" placeholder="you@startup.com" required />
+                <input id="j-email" name="email" type="email" placeholder="you@company.com" data-i18n-ph="join_email_ph" required />
               </div>
             </label>
           </div>
 
           <fieldset class="seg">
-            <legend>You're mostly a…</legend>
+            <legend data-i18n="join_role_legend">You're mostly a…</legend>
             <div class="seg-opts">
-              <label><input type="radio" name="role" value="founder" checked /><span>Founder / SaaS</span></label>
-              <label><input type="radio" name="role" value="marketer" /><span>SEO / Marketing</span></label>
-              <label><input type="radio" name="role" value="agency" /><span>Agency (multi-site)</span></label>
-              <label><input type="radio" name="role" value="other" /><span>Other</span></label>
+              <label><input type="radio" name="role" value="founder" checked /><span data-i18n="role_founder">Founder / business owner</span></label>
+              <label><input type="radio" name="role" value="marketing" /><span data-i18n="role_marketing">Marketing / SEO</span></label>
+              <label><input type="radio" name="role" value="agency" /><span data-i18n="role_agency">Agency (multi-site)</span></label>
+              <label><input type="radio" name="role" value="other" /><span data-i18n="role_other">Other</span></label>
             </div>
           </fieldset>
 
           <label class="intent">
             <input type="checkbox" id="j-intent" name="intent" />
-            <span>Optional — would continuous monitoring be useful later? (Alerts when your score drops or a competitor passes you.) <em>Founding members get it free for life — this just helps me prioritize what to build.</em></span>
+            <span data-i18n="join_intent">Optional — would continuous monitoring be useful later? (Alerts when your score drops or a competitor passes you.) <em>Founding members get it free for life — this just helps me prioritize.</em></span>
           </label>
 
           <div class="price-q" id="price-q" hidden>
-            <span class="mono dim">// if it were paid, a fair price would be…</span>
+            <span class="mono dim" data-i18n="join_price_q">// if it were paid, a fair price would be…</span>
             <div class="seg-opts price-opts">
-              <label><input type="radio" name="price" value="19" /><span>€19/mo</span></label>
-              <label><input type="radio" name="price" value="49" /><span>€49/mo</span></label>
-              <label><input type="radio" name="price" value="99" /><span>€99+/mo</span></label>
+              <label><input type="radio" name="price" value="19" /><span>19€/mo</span></label>
+              <label><input type="radio" name="price" value="49" /><span>49€/mo</span></label>
+              <label><input type="radio" name="price" value="99" /><span>99€+/mo</span></label>
             </div>
           </div>
 
-          <button type="submit" class="btn btn-primary btn-block" id="j-submit">Claim my founding spot →</button>
-          <p class="microcopy">You'll get your hand-audited report in ~48h, straight to your inbox. No spam. Unsubscribe in one click.</p>
+          <button type="submit" class="btn btn-primary btn-block" id="j-submit" data-i18n="join_btn">Claim my founding spot →</button>
+          <p class="microcopy" data-i18n="join_micro">You'll get your hand-audited report in ~48h, straight to your inbox. No spam. Unsubscribe in one click.</p>
         </form>
 
         <div class="join-success" id="join-success" hidden>
           <div class="success-grade">✓</div>
-          <h3>You're on the founding list.</h3>
-          <p>We'll hand-audit <strong id="ok-url">your site</strong> and email your full AI Search Readiness score + the fixes shortly. Watch your inbox.</p>
+          <h3 data-i18n="ok_h3">You're on the founding list.</h3>
+          <p data-i18n="ok_p">We'll hand-audit <strong id="ok-url">your site</strong> and email your full AI Search Readiness score + the fixes shortly. Watch your inbox.</p>
 
           <div class="teaser" id="teaser" hidden>
-            <span class="teaser-head mono">// instant peek — we just checked 3 of the 12 signals:</span>
+            <span class="teaser-head mono" data-i18n="teaser_head">// instant peek — we just checked 3 of the 12 signals:</span>
             <ul class="teaser-list" id="teaser-list"></ul>
-            <span class="mono dim">Your full 12-signal audit + ready-to-paste fixes land within ~48h.</span>
+            <span class="mono dim" data-i18n="teaser_tail">Your full 12-signal audit + ready-to-paste fixes land within ~48h.</span>
           </div>
 
-          <p class="mono dim">// tip: reply to that email with a competitor's URL and we'll benchmark you against them.</p>
+          <p class="mono dim" data-i18n="ok_tip">// tip: reply to that email with a competitor's URL and we'll benchmark you against them.</p>
         </div>
       </div>
     </section>
 
     <!-- ░░ FAQ ░░ -->
     <section class="band faq-band">
-      <p class="section-tag">// FAQ</p>
+      <p class="section-tag" data-i18n="faq_tag">// FAQ</p>
       <div class="faq">
-        <details><summary>Is it really free?</summary><p>Yes. Your scan and score cost nothing, no card required. Later we'll offer optional paid monitoring — but the audit you get now is free, for good.</p></details>
-        <details><summary>When do I get my score?</summary><p>Founding sites are hand-audited by the maker, so within a couple of days. You'll get an email with your grade, fixes, and a competitor benchmark.</p></details>
-        <details><summary>Does “GEO” actually matter yet?</summary><p>If your buyers already ask ChatGPT or Perplexity for recommendations, you're already being judged by AI engines. This tells you how you score.</p></details>
-        <details><summary>What do you do with my data?</summary><p>We store your email and URL to send your audit and product updates. We don't sell your data. One-click unsubscribe, always.</p></details>
+        <details><summary data-i18n="faq_q1">Is it really free?</summary><p data-i18n="faq_a1">Yes. Your scan and score cost nothing, no card required. Later we'll offer optional paid monitoring — but the audit you get now is free, for good.</p></details>
+        <details><summary data-i18n="faq_q2">When do I get my score?</summary><p data-i18n="faq_a2">Founding sites are hand-audited by the maker, so within a couple of days. You'll get an email with your grade, fixes, and a competitor benchmark.</p></details>
+        <details><summary data-i18n="faq_q3">Does AI visibility actually matter yet?</summary><p data-i18n="faq_a3">If your buyers already ask ChatGPT or Perplexity for recommendations — and increasingly they do — you're already being judged by AI engines. This tells you how you score.</p></details>
+        <details><summary data-i18n="faq_q4">What do you do with my data?</summary><p data-i18n="faq_a4">We store your email and URL to send your audit and product updates. We don't sell your data. One-click unsubscribe, always.</p></details>
       </div>
     </section>
 
     <!-- ░░ FINAL CTA ░░ -->
     <section class="band final-cta">
-      <h2 class="big">ChatGPT is recommending <em>someone</em> right now.</h2>
-      <p class="sub">Find out if it's you.</p>
-      <a href="#join" class="btn btn-primary btn-lg">Get my free audit →</a>
+      <h2 class="big" data-i18n="final_h2">AI is recommending <em>someone</em> right now.</h2>
+      <p class="sub" data-i18n="final_sub">Find out if it's you.</p>
+      <a href="#join" class="btn btn-primary btn-lg" data-i18n="final_btn">Get my free audit →</a>
     </section>
   </main>
 
   <footer class="footer">
     <span class="brand"><span class="brand-mark">◧</span> CiteScore</span>
-    <span class="mono dim">aicitescore.com · AI Search Readiness</span>
+    <span class="mono dim" data-i18n="footer_tag">aicitescore.com · AI Search Readiness</span>
     <span class="mono dim">© 2026</span>
   </footer>
 
+  <script src="i18n.js"></script>
   <script src="app.js"></script>
 </body>
 </html>
